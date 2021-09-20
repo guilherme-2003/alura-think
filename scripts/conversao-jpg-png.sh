@@ -1,3 +1,6 @@
 #!/bin/bash
 
-convert ~/alura-think/imagens-livros/amazon_aws.jpg ~/alura-think/imagens-livros/amazon_aws.png
+CAMINHOS_IMAGENS=~/alura-think/imagens-livros
+
+convert $CAMINHOS_IMAGENS/$1.jpg $CAMINHOS_IMAGENS/$1.png
+convert $CAMINHOS_IMAGENS/$2.jpg $CAMINHOS_IMAGENS/$2.png
