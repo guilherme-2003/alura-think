@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CAMINHOS_IMAGENS=~/alura-think/imagens-livros
-
-convert $CAMINHOS_IMAGENS/$1.jpg $CAMINHOS_IMAGENS/$1.png
-convert $CAMINHOS_IMAGENS/$2.jpg $CAMINHOS_IMAGENS/$2.png
+cd ~/alura-think/imagens-livros
+for imagem in *.jpg 
+do
+	convert $imagem $imagem.png
+done
