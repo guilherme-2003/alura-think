@@ -1,0 +1,23 @@
+#!/bin/bash
+
+name1=$1
+name2=$2
+
+read -p "Enter the name of the first guest: " name1
+
+if [[ "${name1}" =~ [^a-Za-Z] ]];
+then
+	echo "invalid"
+else
+	echo "eh isso"
+fi
+
+#then
+#	read -p "Enter the name of second guest: " name2
+#if [[ "${name2}" =~ [^a-Za-Z] ]]
+#then 
+#	echo $name1 $name2
+#else
+#	echo "This caractere type doesn´t is valid"
+#fi
+#fi

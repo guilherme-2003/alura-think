@@ -1,0 +1,8 @@
+#!/bin/bash
+
+f () {
+	A=1
+}
+A=2
+f
+echo A = $A 
