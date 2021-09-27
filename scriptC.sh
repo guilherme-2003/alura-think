@@ -1,13 +1,14 @@
 #!/bin/bash
 
 read -p "Enter name of the first guest: " val
+
 if [ -z $val ]
 then
 	echo "You need to enter some information!"
 else
 echo $val|grep "^[a-zA-Z]*$"
 
-val="$?"
+export val="$?"
 
 if [[ $val == 0 ]]
 then
@@ -46,3 +47,4 @@ fi
 	fi
 exit
 fi
+
