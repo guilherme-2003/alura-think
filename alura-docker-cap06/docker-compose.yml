@@ -1,0 +1,73 @@
+# Aqui especificamos qual versão do YAML iremos utilizar
+version: '3'
+# Os services são cada parte da nossa aplicação (geralmente cada service é um container)
+services: 
+    #dentro do services eu defino todos os containers que quero buildar
+    nginx:
+        #para definir que eu quero buildar, usa-se o build
+        build:
+            #o dockerfile é o caminho onde está o dockerfile desse container
+            dockerfile: ./docker/nginx.dockerfile
+            #o context é o ponto inicial da busca pelo arquivo dockerfile (no caso, vamos buscar na root ".")
+            context: .
+        #o image define qual o nome da imagem que será criada para esse service
+        image: guilhermep/nginx
+        #o container name é o nome do container que será criado a partir da imagem buildada
+        container_name: nginx
+        ports:
+            - "80:80"
+        networks:
+            - production-network
+        # O depends_on diz para o Docker que o serviço em questão está aguardando os serviços assinalados, ele subirá apenas após os serviços assinalados subirem
+        depends_on:
+            - "node1"
+            - "node2"
+            - "node3"
+
+    mongodb:
+        image: mongo
+        networks:
+            - production-network
+
+    node1:
+        build:
+            dockerfile: ./docker/alura-books.dockerfile
+            context: .
+        image: guilhermep/alura-books
+        container_name: alura-books-1
+        ports:
+            - "3000"
+        networks: 
+            - production-network
+        depends_on:
+            - "mongodb" 
+
+    node2:
+        build:
+            dockerfile: ./docker/alura-books.dockerfile
+            context: .
+        image: guilhermep/alura-books
+        container_name: alura-books-2
+        ports:
+            - "3000"
+        networks: 
+            - production-network
+        depends_on:
+            - "mongodb" 
+
+    node3:
+        build:
+            dockerfile: ./docker/alura-books.dockerfile
+            context: .
+        image: guilhermep/alura-books
+        container_name: alura-books-3
+        ports:
+            - "3000"
+        networks: 
+            - production-network
+        depends_on:
+            - "mongodb" 
+
+networks:
+    production-network:
+        driver: bridge
