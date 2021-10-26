@@ -1,19 +1,21 @@
 console.log('Trabalhando com atribuição de variáveis')
 
-// const idade = 29
-// const nome = "Guilherme"
-// const sobrenome = "Paulela"
+const primeiroNome = "Guilherme"
+const sobrenome = "Paulela"
 
-// console.log(nome, sobrenome)
-//console.log('Meu nome é ${nome} ${sobrenome}')
+console.log(primeiroNome, sobrenome)
+console.log(`Meu nome é ${primeiroNome} ${sobrenome}`)
 
 //nome =  nome + sobrenome
 // erro porque o const significa constante, logo, o valor da variável não pode mudar
 
-let idade = 29
-let nome = "Guilherme"
-let sobrenome = "Paulela"
+let contador = 0
+contador = contador + 1
 
-nome = nome + sobrenome
+const nomeCompleto = primeiroNome + sobrenome
+console.log(nomeCompleto)
 
-console.log(nome)
+let idade
+idade = 17
+idade = idade + 1
+console.log(idade)
