@@ -1,0 +1,13 @@
+select * from tbcliente;
+
+select CPF, NOME, ENDERECO1, ENDERECO2, BAIRRO, CIDADE, ESTADO, CEP, IDADE,
+SEXO, LIMITE_CREDITO, VOLUME_COMPRA, PRIMEIRA_COMPRA
+from tbcliente;
+
+select CPF, NOME from tbcliente;
+
+select CPF, NOME from tbcliente LIMIT 5;
+
+select CPF as CPF_CLIENTE, NOME AS NOME_CLIENTE FROM tbcliente;
+
+SELECT NOME, CPF, SEXO, IDADE, DATA_NASCIMENTO FROM tbcliente;
